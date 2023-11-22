@@ -1,4 +1,3 @@
-
 [*.{cs,vb}]
 #### Naming styles ####
 
@@ -56,6 +55,7 @@ dotnet_style_prefer_is_null_check_over_reference_equality_method = true:suggesti
 dotnet_style_prefer_auto_properties = true:silent
 dotnet_style_object_initializer = true:suggestion
 dotnet_style_collection_initializer = true:suggestion
+dotnet_style_allow_multiple_blank_lines_experimental = false:error
 
 [*.cs]
 csharp_indent_labels = one_less_than_current
