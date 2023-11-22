@@ -33,22 +33,38 @@ var stringNumbers = numbers.Where(x => x % 2 == 0).Select(x => x / 2);
 var stringNumbers2 = numbers.Where(x => x % 2 == 0).Select(x => x / 2);
 var stringNumbers3 = numbers.Where(x => x % 2 == 0).Select(x => x / 2);
 
-Console.WriteLine(string.Join(",", numbers.Where(x=>x % 2 == 0)));
+Console.WriteLine(string.Join(",", numbers.Where(x => x % 2 == 0)));
 Console.WriteLine(string.Join(",", stringNumbers2.Where(x => x % 2 == 0)));
 Console.WriteLine(string.Join(",", stringNumbers2.Where(x => x % 2 == 0)));
 
 var odds = numbers.Where(x => x % 2 == 0);
 app.UseHttpsRedirection();
-MyMethod(stringNumbers2);
+MyMethod(stringNumbers2.Select(s => s.ToString()));
 
 app.UseAuthorization();
+
+var someStrings = new List<int>()
+{
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+}.Select(i => string.Concat("Hello"));
+
+// It takes 2 * O(n) to complete 'Count()' and 'Last()' calls, where 'n' is the length of 'someStrings'.
+var count = someStrings.Count();
+var lastElement = someStrings.Last();
 
 while (true)
 {
     Console.WriteLine(".");
 }
 
-
+var selectedElements = stringNumbers3.Select(i => string.Concat("Hello"));
+var count = selectedElements.Count();
+var count2 = selectedElements.Last();
 
 
 
@@ -58,10 +74,9 @@ app.Run();
 
 return;
 
-void MyMethod(IEnumerable<int> input)
+void MyMethod(IEnumerable<string> input)
 {
-    var count = input.Count();
-    foreach (var i in input) { }
+
 }
 
 class Testclass
