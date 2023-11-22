@@ -39,8 +39,10 @@ Console.WriteLine(string.Join(",", stringNumbers2.Where(x => x % 2 == 0)));
 
 var odds = numbers.Where(x => x % 2 == 0);
 app.UseHttpsRedirection();
+MyMethod(stringNumbers2);
 
 app.UseAuthorization();
+var a = new int[0];
 
 while (true)
 {
@@ -57,16 +59,10 @@ app.Run();
 
 return;
 
-void MyMethod(IEnumerable<int> input, Testclass? example)
+void MyMethod(IEnumerable<int> input)
 {
-    if (example == null)
-    {
-        return;
-    }
-
     var count = input.Count();
-    foreach (var i in input)
-    { }
+    foreach (var i in input) { }
 }
 
 class Testclass
