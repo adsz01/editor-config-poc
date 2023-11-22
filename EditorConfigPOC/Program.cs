@@ -42,7 +42,6 @@ app.UseHttpsRedirection();
 MyMethod(stringNumbers2);
 
 app.UseAuthorization();
-var a = new int[0];
 
 while (true)
 {
