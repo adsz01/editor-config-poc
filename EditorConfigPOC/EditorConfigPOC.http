@@ -1,0 +1,6 @@
+@EditorConfigPOC_HostAddress = http://localhost:5080
+
+GET {{EditorConfigPOC_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
