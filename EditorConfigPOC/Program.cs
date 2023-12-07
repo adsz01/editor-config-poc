@@ -28,7 +28,6 @@ IEnumerable<int> numbers = new List<int>()
     6,
 };
 
-
 var stringNumbers = numbers.Where(x => x % 2 == 0).Select(x => x / 2);
 var stringNumbers2 = numbers.Where(x => x % 2 == 0).Select(x => x / 2);
 var stringNumbers3 = numbers.Where(x => x % 2 == 0).Select(x => x / 2);
@@ -52,21 +51,6 @@ var someStrings = new List<int>()
     5,
     6,
 }.Select(i => string.Concat("Hello"));
-
-// It takes 2 * O(n) to complete 'Count()' and 'Last()' calls, where 'n' is the length of 'someStrings'.
-var count = someStrings.Count();
-var lastElement = someStrings.Last();
-
-while (true)
-{
-    Console.WriteLine(".");
-}
-
-var selectedElements = stringNumbers3.Select(i => string.Concat("Hello"));
-var count = selectedElements.Count();
-var count2 = selectedElements.Last();
-
-
 
 app.MapControllers();
 
