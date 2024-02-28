@@ -38,7 +38,7 @@ Console.WriteLine(string.Join(",", stringNumbers2.Where(x => x % 2 == 0)));
 
 var odds = numbers.Where(x => x % 2 == 0);
 app.UseHttpsRedirection();
-MyMethod(stringNumbers2.Select(s => s.ToString()));
+MyMethod(stringNumbers2);
 
 app.UseAuthorization();
 
@@ -58,10 +58,24 @@ app.Run();
 
 return;
 
-void MyMethod(IEnumerable<string> input)
+void MyMethod(IEnumerable<int> input)
 {
+    var someStrings = GetStrings().Select(i => string.Concat("Hello"));
 
+    var count = someStrings.Count();
+    var lastElement = someStrings.Last();
 }
+
+IEnumerable<string> GetStrings()
+    => new List<int>()
+        {
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+        }.Select(i => i.ToString());
 
 class Testclass
 {
