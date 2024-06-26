@@ -21,4 +21,4 @@ jobs:
         with:
           header: pr-name-error-message
           message: |
-            PR name is not correct, please use Feature: SBB2B-1234: Description
+            PR name is not correct, please use a correct one, eg.: Feature: SBB2B-1234: Description
