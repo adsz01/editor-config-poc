@@ -13,6 +13,7 @@ jobs:
           regex: '\([S][A-Z]+[A-Z0-9]*-[0-9]\)\s.+'
           allowed_prefixes: 'Feature, Release, Hotfix'
       - uses: marocchino/sticky-pull-request-comment@v2
+        if: failure()
         with:
           header: pr-name
           delete: true
