@@ -1,0 +1,42 @@
+﻿namespace SB.Customer.Management.Contracts.Output.Wallet
+{
+	public enum WalletActivityResultCode
+	{
+		Success = 100,
+		NotProcessed = 200,
+		TransactionIdNotFound = 300,
+		CannotHaveWithdrawalTypeBetPlacementForAnExistingTransaction = 302,
+		CannotHaveMoreThanOneOpenTransaction = 304,
+		AmountShouldBeGreaterThanOrEqualToZero = 306,
+		FeeCannotBeLessThanOrEqualToZero = 307,
+		ANewTransactionMustHaveTransactionActionOpen = 308,
+		CannotReopenAnAlreadyOpenedTransaction = 311,
+		CurrencyCodeIsRequired = 316,
+		AllTransactionActionsShouldBeTheSame = 317,
+		TransactionChangeNotAllowed = 318,
+		ActivityNotFound = 319,
+		ActivityAlreadyVoided = 320,
+		CannotVoidTransaction = 321,
+		CustomerNotAssociatedWithTransaction = 322,
+		ActivitiesWithoutTransactionActionCanOnlyBeCashout = 323,
+		TransactionActionReasonAndDepositTypeAreNotCompatible = 326,
+		NewTransactionsMustBeOpenedFromBetPlacement = 327,
+		TransactionActionTypeInvalidForDeposit = 328,
+		OnTransactionOpenWithdrawalTypeShouldBeBetPlacement = 329,
+		CannotHaveTransactionActionReasonBetPlacementForExistingTransaction = 330,
+		CannotVoidDuringWithdrawal = 331,
+		CannotReopenTransactionFromSettlement = 332,
+		CannotReopenAndCloseTransactionFromSettlement = 333,
+		CannotPerformActionsOnAClosedTransaction = 334,
+		CannotDepositWhenActivityIsVoided = 335,
+		CannotAddActivitiesToATransactionWhichIsNotOpenOrReopen = 336,
+		TransactionsMustBeUnique = 337,
+		AllActivitiesMustHaveWithdrawalTypeBetPlacementAdjustment = 338,
+		BetPlacementAdjustmentMustNotHaveTransactionAction = 339,
+		BetPlacementAdjustmentMustBePerformedOnAnOpenTransaction = 340,
+		BrandDoesNotExist = 341,
+		BalanceCheckHasFailed = 350,
+		OtherTransactionsFailed = 400,
+		TechnicalError = 401
+	}
+}

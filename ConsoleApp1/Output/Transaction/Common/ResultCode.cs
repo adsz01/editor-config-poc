@@ -1,0 +1,41 @@
+﻿namespace SB.Customer.Management.Contracts.Output.Transaction.Common
+{
+	public enum ResultCode
+	{
+		Success = 1,
+		NotProcessed = 2,
+		TransactionIdNotFound = 3,
+		CannotHaveWithdrawalTypeBetPlacementForAnExistingTransaction = 4,
+		CannotHaveMoreThanOneOpenTransaction = 5,
+		AmountShouldBeGreaterThanOrEqualToZero = 6,
+		FeeCannotBeLessThanOrEqualToZero = 7,
+		ANewTransactionMustHaveTransactionActionOpen = 8,
+		CannotReopenAnAlreadyOpenedTransaction = 9,
+		CurrencyCodeIsRequired = 10,
+		AllTransactionActionsShouldBeTheSame = 11,
+		TransactionChangeNotAllowed = 12,
+		CustomerNotAssociatedWithTransaction = 13,
+		ActivitiesWithoutTransactionActionCanOnlyBeCashout = 14,
+		TransactionActionReasonAndDepositTypeAreNotCompatible = 15,
+		NewTransactionsMustBeOpenedFromBetPlacement = 16,
+		TransactionActionTypeInvalidForDeposit = 17,
+		OnTransactionOpenWithdrawalTypeShouldBeBetPlacement = 18,
+		CannotHaveTransactionActionReasonBetPlacementForExistingTransaction = 19,
+		CannotVoidDuringWithdrawal = 20,
+		CannotReopenTransactionFromSettlement = 21,
+		CannotReopenAndCloseTransactionFromSettlement = 22,
+		CannotPerformActionsOnAClosedTransaction = 23,
+		OtherTransactionsFailed = 24,
+		TechnicalError = 25,
+		CannotAddActivitiesToATransactionWhichIsNotOpenOrReopen = 26,
+		NewTransactionCanOnlyBeOpenedFromBetPlacement = 27,
+		ActivityNotFound = 28,
+		ActivityAlreadyVoided = 29,
+		CannotVoidTransaction = 30,
+		CannotDepositWhenActivityIsVoided = 31,
+		BetPlacementAdjustmentMustNotHaveTransactionAction = 32,
+		AllActivitiesMustHaveWithdrawalTypeBetPlacementAdjustment = 33,
+		BetPlacementAdjustmentMustBePerformedOnAnOpenTransaction = 34,
+		BrandDoesNotExist = 35
+	}
+}

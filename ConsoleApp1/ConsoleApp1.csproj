@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SB.BrandManagement.Api.Contracts" Version="1.0.0.1086" />
+    <PackageReference Include="SB.BrandManagement.Api.Infrastructure.API.Client" Version="1.0.0.1086" />
+    <PackageReference Include="SB.Community.HttpClient.Contracts" Version="1.0.0.48" />
+    <PackageReference Include="SB.Community.Serialisation.Interfaces" Version="0.1.2328.6" />
+    <PackageReference Include="SB.Community.Serialisation.NewtonsoftJson" Version="0.1.2328.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EditorConfigPOC\EditorConfigPOC.csproj" />
+  </ItemGroup>
+
+</Project>

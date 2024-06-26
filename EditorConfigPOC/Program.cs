@@ -1,3 +1,7 @@
+using BenchmarkDotNet.Attributes;
+using EditorConfigPOC;
+using MyBenchmarks;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -58,6 +62,10 @@ app.Run();
 
 return;
 
+DateTime MapDateTime(string timeStamp)
+ => DateTime.TryParse(timeStamp, out var dateTime) ? dateTime : DateTime.Now;
+
+[Benchmark]
 void MyMethod(IEnumerable<int> input)
 {
     var someStrings = GetStrings().Select(i => string.Concat("Hello"));
@@ -81,3 +89,4 @@ class Testclass
 {
     public int var1 { get; set; }
 }
+
