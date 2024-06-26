@@ -16,6 +16,5 @@ jobs:
         if: failure()
         with:
           header: pr-name
-          delete: true
           message: |
             'PR name is not correct, please use Feature: SBB2B-1234: Description'
