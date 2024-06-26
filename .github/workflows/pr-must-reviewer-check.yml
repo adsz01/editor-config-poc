@@ -1,0 +1,11 @@
+name: 'Check Must Reviewers'
+on: 
+  pull_request:
+    types: [edited, opened, synchronize, reopened]
+
+jobs:
+  must-reviewer-check:
+    runs-on: [ubuntu-latest]
+    steps:
+        - name: Must Reviewers check
+          run: echo "Must reviewers checked"

@@ -1,0 +1,12 @@
+name: 'Check PR Name'
+on: 
+  pull_request:
+    types: [edited, opened, synchronize, reopened]
+
+jobs:
+  title-check:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: deepakputhraya/action-pr-title@master
+        with:
+          regex: '.'
