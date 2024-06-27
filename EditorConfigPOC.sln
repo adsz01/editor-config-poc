@@ -8,9 +8,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F8AB017D-1EA0-4EBC-A67A-F12F1CF62A27}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
+		.github\workflows\pr-must-reviewer-check.yml = .github\workflows\pr-must-reviewer-check.yml
+		.github\workflows\pr-name-check.yml = .github\workflows\pr-name-check.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{8E917BE6-904A-49F7-AC8C-398C11EA590F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{8E917BE6-904A-49F7-AC8C-398C11EA590F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
