@@ -8,9 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SB.BrandManagement.Api.Contracts" Version="1.0.0.1086" />
-    <PackageReference Include="SB.BrandManagement.Api.Infrastructure.API.Client" Version="1.0.0.1086" />
-    <PackageReference Include="SB.Community.HttpClient.Contracts" Version="1.0.0.48" />
+    <PackageReference Include="SB.BrandManagement.Api.Contracts" Version="1.0.0.1100" />
+    <PackageReference Include="SB.BrandManagement.Api.Infrastructure.API.Client" Version="1.0.0.1100" />
+    <PackageReference Include="SB.Community.HttpClient.Contracts" Version="1.0.0.64" />
     <PackageReference Include="SB.Community.Serialisation.Interfaces" Version="0.1.2328.6" />
     <PackageReference Include="SB.Community.Serialisation.NewtonsoftJson" Version="0.1.2328.6" />
   </ItemGroup>
