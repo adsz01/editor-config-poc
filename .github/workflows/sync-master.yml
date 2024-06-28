@@ -13,7 +13,12 @@ jobs:
     steps:
         - id: matrix
           run: |
-            echo gh api -H "Accept: application/vnd.github+json" /repos/adsz01/editor-config-poc/pulls >> $GITHUB_OUTPUT
+            ```
+            echo gh api \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            /repos/OWNER/REPO/pulls
+            ```
         - run: |
             echo "${{ steps.matrix.outputs.value }}"
   sync-release-pr-branches:
