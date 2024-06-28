@@ -1,4 +1,4 @@
-name: Update cms/master
+name: Update Release branch with master
 
 on:
   push:
@@ -19,6 +19,7 @@ jobs:
         id: extract_branch
       - name: merge
         uses: mtanzi/action-automerge@v1
+        if: ${{ success() && startsWith(steps.extract_branch.outputs.branch, 'release' ) || startsWith(steps.extract_branch.outputs.branch, 'integration' )}}
         id: merge
         with:
           github_token: ${{ github.token }}
