@@ -6,10 +6,23 @@ on:
       - master
 
 jobs:
-  update-cms-master:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+        matrix: ${{ steps.matrix.outputs.value }}
+    steps:
+        - id: matrix
+          run: |
+            echo gh api -H "Accept: application/vnd.github+json" /repos/adsz01/editor-config-poc/pulls >> $GITHUB_OUTPUT
+        - run: |
+            echo "${{ steps.matrix.outputs.value }}"
+  sync-release-pr-branches:
     name: Merge master into release after a PR is merged
     runs-on: ubuntu-latest
     permissions: write-all
+    strategy:
+        matrix:
+          value: ${{fromJSON(needs.setup.outputs.matrix)}}
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -23,5 +36,5 @@ jobs:
         id: merge
         with:
           github_token: ${{ github.token }}
-          source: 'master'
+          source: '${{ steps.extract_branch.outputs.branch }}'
           target: '${{ steps.extract_branch.outputs.branch }}'
