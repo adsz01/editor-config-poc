@@ -1,0 +1,22 @@
+name: Check Must Reviewers
+
+on:
+  push:
+  
+jobs:
+  must-reviewer-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Read MUSTREVIEWERS file
+        id: read_usernames
+        run: |
+          USERNAMES=$(cat .github\USERS)
+          echo "usernames=$USERNAMES" >> $GITHUB_ENV
+          
+      - name: Print usernames
+        run: |
+            echo "Usernames are: ${{ env.usernames }}"
+              
