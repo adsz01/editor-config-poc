@@ -1,4 +1,4 @@
-name: Check Must Reviewers
+name: Check Must Reviewers Test
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       - name: Read MUSTREVIEWERS file
         id: read_usernames
         run: |
-          USERNAMES=$(cat .github\USERS)
+          USERNAMES=$(cat .github/USERS)
           echo "usernames=$USERNAMES" >> $GITHUB_ENV
           
       - name: Print usernames
