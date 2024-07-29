@@ -14,8 +14,9 @@ jobs:
         id: read_usernames
         run: |
           USERNAMES=$(cat .github/USERS)
+          echo "::set-output name=usernames::$USERNAMES"
           
       - name: Print usernames
         run: |
-            echo "Usernames are: $USERNAMES"
+            echo "Usernames are: ${{ steps.read_usernames.outputs.usernames }}"
               
