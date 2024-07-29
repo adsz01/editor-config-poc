@@ -1,7 +1,8 @@
 name: Check Must Reviewers Test
 
 on:
-  push:
+  pull_request:
+    types: [opened, syncronize, reopened]
   
 jobs:
   must-reviewer-check:
@@ -14,9 +15,24 @@ jobs:
         id: read_usernames
         run: |
           USERNAMES=$(cat .github/USERS)
+          IFS = ' ' read -r -a USERNAME_ARRAY <<< "$USERNAMES"
           echo "::set-output name=usernames::$USERNAMES"
           
-      - name: Print usernames
+      # - name: Print usernames
+      #   run: |
+      #       echo "Usernames are: ${{ steps.read_usernames.outputs.usernames }}"
+      - name: PR Reviews Check
         run: |
-            echo "Usernames are: ${{ steps.read_usernames.outputs.usernames }}"
+          PR_number = ${{github.event.pull_request.number}}
+          Repo = ${{github.repository}}
+          GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          Reviews = $( -H "Accept: application/vnd.github-commitcomment.full+json" \
+          "https://api.github.com/repos/$REPO/pulls/$PR_NUMBER/reviews")
+        
+          
+          
+          # Get the list of must-reviewers from step 2
+          USERNAMES = "${{ steps.read_usernames.outputs.usernames }}"
+          
               
+      
