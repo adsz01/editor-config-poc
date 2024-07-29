@@ -13,7 +13,7 @@ jobs:
       - name: Read MUSTREVIEWERS file
         id: read_usernames
         run: |
-          USERNAMES=$(cat .github/USERS | tr '\n' ' ')
+          USERNAMES=$(cat .github/USERS)
           
       - name: Print usernames
         run: |
