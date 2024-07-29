@@ -14,9 +14,8 @@ jobs:
         id: read_usernames
         run: |
           USERNAMES=$(cat .github/USERS)
-          echo "usernames=$USERNAMES" >> $GITHUB_ENV
           
       - name: Print usernames
         run: |
-            echo "Usernames are: ${{ env.usernames }}"
+            echo "Usernames are: $USERNAMES"
               
