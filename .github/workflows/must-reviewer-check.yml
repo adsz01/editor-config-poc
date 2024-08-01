@@ -15,8 +15,9 @@ jobs:
         uses: andstor/file-reader-action@v1
         with:
           path: ".github/MUSTREVIEWERS.txt"
+      
       - name: File contents
-        run: echo "${steps.read_mustReviewers.outputs.contents}""
+        run: echo "${steps.read_mustReviewers.outputs.contents}"
 
       # - name: MUSTREVIEWERS CHECK
       #   uses: BetssonGroup/sb-b2b-must-reviewer-check-workflow@1.0.0
