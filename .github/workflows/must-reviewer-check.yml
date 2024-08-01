@@ -19,7 +19,7 @@ jobs:
       - name: Set MustReviewers Output
         id: set_mustReviewers_output
         run: | 
-          echo ":: set-output name=usernames ${{steps.read_mustReviewers.outputs.content}}" 
+          echo ":: set-output name=usernames ${{steps.read_mustReviewers.outputs.usernames}}" 
       
       - name: File contents
         run: echo "${{steps.read_mustReviewers.outputs.usernames}}" 
