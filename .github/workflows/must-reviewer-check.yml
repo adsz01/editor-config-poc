@@ -1,7 +1,8 @@
 name: Check Must Reviewers Test
 
 on:
-  push: 
+  pull_request:
+    types: [opened,synchronize,reopened] 
   
 jobs:
   must-reviewer-check:
@@ -24,11 +25,11 @@ jobs:
       - name: File contents
         run: echo "${{steps.read_mustReviewers.outputs.contents}}" 
 
-      # - name: MUSTREVIEWERS CHECK
-      #   uses: BetssonGroup/sb-b2b-must-reviewer-check-workflow@1.0.0
-      #   with:
-      #     github-token: ${{secrets.GITHUB_TOKEN}}
-      #     must-reviewers: ${{steps.read_mustReviewers.outputs.usernames}}
+      - name: MUSTREVIEWERS CHECK
+        uses: BetssonGroup/sb-b2b-must-reviewer-check-workflow@v1.0.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          must-reviewers: ${{steps.read_mustReviewers.outputs.contents}}
  
               
       
