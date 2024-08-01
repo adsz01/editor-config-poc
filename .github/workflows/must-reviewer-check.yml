@@ -18,10 +18,11 @@ jobs:
         
       - name: Set MustReviewers Output
         id: set_mustReviewers_output
-        run: echo "::set-output name=usernames::$USERNAMES" 
+        run: | 
+          echo ":: set-output name=usernames ${{steps.read_mustReviewers.outputs.content}}" 
       
       - name: File contents
-        run: echo "${steps.read_mustReviewers.outputs.usernames}"
+        run: echo "${{steps.read_mustReviewers.outputs.usernames}}" 
 
       # - name: MUSTREVIEWERS CHECK
       #   uses: BetssonGroup/sb-b2b-must-reviewer-check-workflow@1.0.0
