@@ -13,7 +13,7 @@ jobs:
       - name: Reading MUSTREVIEWERS file
         id: read_mustReviewers
         run: |
-          mustReviewers = ${cat MUSTREVIEWERS.txt}
+          mustReviewers = ${cat .github/MUSTREVIEWERS.txt}
           echo "Usernames from file: $usernames"
           echo "::set-output name=usernames::$usernames"
 
