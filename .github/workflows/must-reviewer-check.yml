@@ -1,8 +1,7 @@
 name: Check Must Reviewers Test
 
 on:
-  pull_request:
-    types: [opened, syncronize, reopened]
+  push: 
   
 jobs:
   must-reviewer-check:
@@ -11,28 +10,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Read MUSTREVIEWERS file
-        id: read_usernames
+      - name: Reading MUSTREVIEWERS file
+        id: read_mustReviewers
         run: |
-          USERNAMES=$(cat .github/USERS)
-          IFS = ' ' read -r -a USERNAME_ARRAY <<< "$USERNAMES"
-          echo "::set-output name=usernames::$USERNAMES"
-          
-      # - name: Print usernames
-      #   run: |
-      #       echo "Usernames are: ${{ steps.read_usernames.outputs.usernames }}"
-      - name: PR Reviews Check
-        run: |
-          PR_number = ${{github.event.pull_request.number}}
-          Repo = ${{github.repository}}
-          GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
-          Reviews = $( -H "Accept: application/vnd.github-commitcomment.full+json" \
-          "https://api.github.com/repos/$REPO/pulls/$PR_NUMBER/reviews")
-        
-          
-          
-          # Get the list of must-reviewers from step 2
-          USERNAMES = "${{ steps.read_usernames.outputs.usernames }}"
-          
+          mustReviewers = ${cat MUSTREVIEWERS.txt}
+          echo "Usernames from file: $usernames"
+          echo "::set-output name=usernames::$usernames"
+
+      - name: MUSTREVIEWERS CHECK
+        uses: BetssonGroup/sb-b2b-must-reviewer-check-workflow@1.0.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          must-reviewers: ${{steps.read_mustReviewers.outputs.usernames}}
+ 
               
       
