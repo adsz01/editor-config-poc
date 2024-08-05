@@ -26,7 +26,7 @@ jobs:
         run: echo "${{steps.read_mustReviewers.outputs.contents}}" 
 
       - name: MUSTREVIEWERS CHECK
-        uses: BetssonGroup/sb-b2b-must-reviewer-check-workflow/tree/feature/SBB2B-7979-Implement-must-review-process@v1.0.0
+        uses: BetssonGroup/sb-b2b-must-reviewer-check-workflow/tree/feature/SBB2B-7979-Implement-must-review-process@1.0.0
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           must-reviewers: ${{steps.read_mustReviewers.outputs.contents}}
